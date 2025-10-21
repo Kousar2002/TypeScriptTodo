@@ -67,7 +67,6 @@ interface TodoProps{
 const Todos:React.FC<TodoProps>=({formData,setFormData,categerioes,setCategerioes,category,setCategory,catopen,setcatOpen,finalcat,setFinalCat,newCatError,setnewCatError, error,setError,todos,setTodos,existingTodo,setExistingTodo,Edit,setIEdit,open,setOpen,todoState, setTodoState})=>{
      useEffect(() => {
       const savedCategories=localStorage.getItem("categrioes");
-      // console.log(JSON.parse(savedCategories));
       if(savedCategories){
         console.log(JSON.parse(savedCategories));
         setCategerioes(JSON.parse(savedCategories))
@@ -87,19 +86,7 @@ const Todos:React.FC<TodoProps>=({formData,setFormData,categerioes,setCategerioe
     if(name==="title"){
        setError({...error, titleError:""})
     }
-    // setFormData(value);
-    
-    // const newArr = todos.map((todo, ind) =>
-    //   ind === statusInd ? { ...todo, status: Val } : todo
-    // );
-    // console.log(Val);
-    // console.log("helllllllllllll")
-    // console.log(newArr);
-    // // setStatus(Val);
-    // setTodos(newArr);
-    // // setFormData({...formData,status:e.target.value})
-    // localStorage.setItem("todos", JSON.stringify(newArr));
-    // console.log(todos);
+
   };
   const handleChangeCatogery=(e: SelectChangeEvent<string>)=>{
     console.log("dkfjldfksf")
@@ -185,12 +172,6 @@ const Todos:React.FC<TodoProps>=({formData,setFormData,categerioes,setCategerioe
       const updatedTodos=[...todos,obj];
       setTodos(updatedTodos);
       localStorage.setItem("todos",JSON.stringify(updatedTodos))
-      // setNewTodo(obj);
-      // setTodos((prevTodos) => [...prevTodos, obj]);
-      // setTodos([...todos,newtodo]);
-      // const existingtodos = JSON.parse(localStorage.getItem("todos")) || [];
-      // localStorage.setItem("todos", JSON.stringify([...existingtodos, newTodo]));
-
     }
     console.log(todos);
     console.log(existingTodo);

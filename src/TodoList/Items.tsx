@@ -1,5 +1,5 @@
 import React from "react";
-import {  Grid,Box, Button, TextField, FormControl, Select, MenuItem } from "@mui/material";
+import {  Grid,Box, Button, FormControl, Select, MenuItem } from "@mui/material";
 
 
 import {
@@ -10,31 +10,14 @@ import {
   Add as AddIcon,
   Add,
 } from "@mui/icons-material";
-// import {
-//   FormControl,
-//   InputLabel,
-//   Select,
-//   MenuItem,
-//   Box,
-//   Dialog,
-//   DialogTitle,
-//   DialogContent,
-//   DialogActions,
-//   Typography,
-// } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import CloseIcon from "@mui/icons-material/Close";
 interface FormData{
         title:string;
         description:string;
         category:string;
         status:string;
 }
-// interface ErrorData{
-//   titleError:string;
-//   descError:string;
-//   catError:string
-// }
+
 interface Todo {
   title: string;
   description: string;
@@ -135,30 +118,12 @@ const Items:React.FC<ItemProps> = ({
     if (deleteindex !== undefined) {
       setdelOpen(true);
       console.log(todos);
-      // const del=todos.filter((item,index)=>index!=deleteindex);
-      // console.log(del);
-      // console.log(todos);
-      // setTodos(del);
       setTodoState((prev) => ({
         ...prev,
         delIndex: deleteindex,
       }));
-      // const del=todos.filter((item,index)=>index!=deleteindex);
-      // console.log(del);
-      // console.log(todos);
-      // setTodos(del);
-      // localStorage.setItem("todos", JSON.stringify(del))
     }
   };
-  const handleCatogire=()=>{
-    console.log("hello")
-    // console.log(catopen)
-    // console.log(category)
-    setcatOpen(true)
-    // if(catopen){
-    //   setcatOpen(true)
-    // }
-  }
   return (
     <Grid
       container

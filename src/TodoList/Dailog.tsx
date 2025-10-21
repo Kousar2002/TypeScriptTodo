@@ -75,13 +75,6 @@ const Dailog:React.FC<DailogProps>=({todos,open,setOpen,delopen,setdelOpen,exist
   category: existingTodo?.category || "",
   status: existingTodo?.status || "pending",
 });
-
-    //   setFormData({
-    //     title:existingTodo.title,
-    //     description:existingTodo.description,
-    //     category:existingTodo.category,
-    //     status: existingTodo.status
-    //   })
       setCategory(existingTodo?.category || "");
       setOpen(false);
     }
@@ -101,39 +94,26 @@ const Dailog:React.FC<DailogProps>=({todos,open,setOpen,delopen,setdelOpen,exist
     const duplicatecategory=categerioes?.find((val,ind)=>val.toLowerCase()==trimcate.toLowerCase())
     console.log(duplicatecategory)
     if(!trimcate){
-      // setError((prev)=>({...prev,catError:"category cannot be empty"}))
+    
       setnewCatError("category cannot be empty")
       return;
     }
     if(duplicatecategory){
       console.log("****")
       setnewCatError("Category already exists")
-    // setError((prev) => ({ ...prev, catError: "Category already exists" }));
+   
     return;
     }
     console.log(category)
     setFinalCat(category);
-    // const filterarr=categerioes.filter((val,ind)=>val!=="Add");
+   
    setCategerioes([...categerioes,category])
     const newcatearr=[...categerioes,category]
     console.log(newcatearr);
      localStorage.setItem("categrioes", JSON.stringify(newcatearr))
     setFormData({ ...formData, category:category });
     setcatOpen(false)
-    // setCategerioes(category);
   }
-//    const handleChangeCatogery=(e)=>{
-//     console.log("dkfjldfksf")
-//      if(e.target.value.trim()!==""){
-//       console.log("*****************8")
-//       setnewCatError("")
-//       // setError({ ...error, catError: "" })
-//     }
-//     console.log(e.target.type);
-//     console.log(e.target.value)
-//     setCategory(e.target.value)
-
-//   }
     return(
         <div>
                   <Dialog open={open||delopen ||catopen} onClose={(event,reason)=>{

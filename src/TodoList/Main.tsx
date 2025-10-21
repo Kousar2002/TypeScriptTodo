@@ -1,35 +1,8 @@
 import React, { useState, useEffect } from "react";
 import {
-  Input,
-  Button,
-  Grid,
-  InputAdornment,
-  FormHelperText,
-  TextField,
+  Grid
 } from "@mui/material";
-import Textarea from "@mui/joy/Textarea";
-import {
-  Title as TitleIcon,
-  Description as DescriptionIcon,
-  Delete as DeleteIcon,
-  Edit as EditIcon,
-  Add as AddIcon,
-  Add,
-} from "@mui/icons-material";
-import {
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  Box,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Typography,
-} from "@mui/material";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import CloseIcon from "@mui/icons-material/Close";
+
 import Todos from "./Todos";
 import Items from "./Items";
 import Status from "./Status";
@@ -149,23 +122,10 @@ const Main:React.FC=()=>{
     setCategory(e.target.value)
 
   }
-
-
-
-  // const handleChange = (statusInd:number, Val:string) => {
-  //   console.log(Val)
-  // };
-  //  const handleAdd = () => {
-  //   console.log(formData);
-  
-   
-  // }
 console.log(todoState);
     return (
       <div>
         <Grid container spacing={2}  >
-          {/* item size={{ xs: 12,sm:6}} */}
-          {/* <Grid item xs={12} sm={6}> */}
           <Grid size={{xs:12,md:4}}>
             <Todos
               formData={formData}
@@ -216,10 +176,6 @@ console.log(todoState);
           setCategory={setCategory}
           setdelOpen={setdelOpen}
           setcatOpen={setcatOpen}
-          // handleExpand={handleExpand}
-          // handleEdit={handleEdit}
-          // handleDelete={handleDelete}
-          // handleCatogire={handleCatogire}
         />
         <MyDialog
           todos={todos}
@@ -232,7 +188,6 @@ console.log(todoState);
           setcatOpen={setcatOpen}
           error={error}
           handleChangeCatogery={handleChangeCatogery}
-          // handleAddCategorie={handleAddCategorie}
           newCatError={newCatError}
           setIEdit={setIEdit}
           todoState={todoState}
@@ -253,4 +208,3 @@ console.log(todoState);
 }
 export default Main;
 
-// formData, error, handleChange, handleAdd, Edit,handleEnter ,categerioes,handleCatogire,category,handleChangeCatogery
